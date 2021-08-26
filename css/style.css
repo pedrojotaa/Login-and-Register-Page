@@ -1,0 +1,128 @@
+/* ESTILIZANDO O HEADER */
+
+.cabecalho{
+    background:linear-gradient( blueviolet, #CCCCCC);
+    padding: 40px;
+}
+
+.cabecalho div{
+    width: 940px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.cabecalho h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.cabecalho ul{
+    margin: 0 0 0 auto;
+}
+
+.cabecalho li{
+    display: inline;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 0 20px;
+}
+
+.cabecalho a{
+    text-decoration: none;
+    color: black;
+}
+
+.cabecalho a:hover{
+    color: white;
+    transition: 1s;
+}
+
+/* ESTILIZANDO O MAIN DO LOGIN*/
+
+.formulario{
+    background-color: #CCCCCC;
+    padding: 40px;
+}
+
+.formulario section{
+    width: 940px;
+    margin: 0 auto;
+}
+
+.formulario div{
+    border: 2px solid white;
+    width: 30%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.formulario h1{
+    color: darkblue;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.formulario input[type=text],
+.formulario input[type=password]{
+    display: block;
+    margin: 10px auto;
+    width: 90%;
+    padding: 6px;
+    border: none;
+    outline: none;
+}
+
+.formulario input[type=submit]{
+    margin: 10px auto;
+    width: 100%;
+    padding: 6px;
+    background-color: darkblue;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.formulario input[type=submit]:hover{
+    opacity: 50%;
+    transition: 1s;
+}
+
+.formulario p{
+    text-align: center;
+    margin: 20px 0;
+    color: black;
+}
+
+.formulario a{
+    text-decoration: none;
+    color: black;
+}
+
+.formulario a:hover{
+    text-decoration: underline;
+}
+
+/* ESTILIZANDO O FOOTER */
+
+.rodape{
+    background:linear-gradient(#CCCCCC, blueviolet);
+    padding: 40px;
+}
+
+.rodape div{
+    width: 940px;
+    margin: 0 auto;
+}
+
+.rodape h1{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
