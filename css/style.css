@@ -67,6 +67,10 @@
     margin: 0 0 10px;
 }
 
+.formulario form{
+    position: relative;
+}
+
 .formulario input[type=text],
 .formulario input[type=password]{
     display: block;
@@ -87,11 +91,42 @@
     font-weight: bold;
     font-size: 16px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .formulario input[type=submit]:hover{
     opacity: 50%;
     transition: 1s;
+}
+
+.eye{
+    height: 10px;
+    width: 10px;
+    background: black;
+    position: absolute;
+    right: 5%;
+    top: 23%;
+    cursor: pointer;
+}
+
+.eye-create{
+    height: 10px;
+    width: 10px;
+    background: black;
+    position: absolute;
+    right: 5%;
+    top: 43%;
+    cursor: pointer;
+}
+
+.eye-confirm{
+    height: 10px;
+    width: 10px;
+    background: black;
+    position: absolute;
+    right: 5%;
+    top: 58%;
+    cursor: pointer;
 }
 
 .formulario p{
