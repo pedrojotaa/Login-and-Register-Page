@@ -46,43 +46,43 @@
 }
 
 .formulario section{
-    width: 940px;
+    max-width: 940px;
+    width: 100%;
     margin: 0 auto;
 }
 
-.formulario div{
-    border: 2px solid white;
-    width: 30%;
-    padding: 10px;
+.caixa{
+    max-width: 300px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
     background-color: white;
     border-radius: 5px;
-    margin: 0 auto;
 }
 
-.formulario h1{
+.caixa h1{
+    max-width: 300px;
+    width: 100%;
     color: darkblue;
     text-align: center;
     font-size: 25px;
     font-weight: bold;
-    margin: 0 0 10px;
 }
 
-.formulario form{
-    position: relative;
+.caixa div{
+    max-width: 300px;
+    width: 95%;
 }
 
-.formulario input[type=text],
-.formulario input[type=password]{
-    display: block;
-    margin: 10px auto;
-    width: 90%;
+.caixa input{
+    max-width: 300px;
+    width: 100%;
     padding: 6px;
-    border: none;
     outline: none;
+    display: block;
 }
 
-.formulario input[type=submit]{
-    margin: 10px auto;
+.caixa button{
     width: 100%;
     padding: 6px;
     background-color: darkblue;
@@ -105,7 +105,7 @@
     background: black;
     position: absolute;
     right: 5%;
-    top: 23%;
+    top: 37%;
     cursor: pointer;
 }
 
@@ -115,7 +115,7 @@
     background: black;
     position: absolute;
     right: 5%;
-    top: 43%;
+    top: 63%;
     cursor: pointer;
 }
 
@@ -125,7 +125,7 @@
     background: black;
     position: absolute;
     right: 5%;
-    top: 58%;
+    top: 79%;
     cursor: pointer;
 }
 
@@ -160,4 +160,27 @@
     font-size: 20px;
     font-weight: bold;
     text-align: center;
+}
+
+
+#registerError{
+    background: lightcoral;
+    color: red;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+    display: none;
+}
+
+#registerSuccess{
+    background: lightgreen;
+    color: green;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+    display: none;
 }

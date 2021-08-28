@@ -23,18 +23,27 @@
 
     <main class="formulario">
         <section>
-            <div>
-                <h1>Login</h1>
-                <form>
-                    <input type="text" name="email" required placeholder="E-mail Adress">
-                    <input id='password' type="password" name="senha" required placeholder="Password">
-                    <p class="eye"></p>
-                    <input type="submit" value="Login">
+                <form class="caixa">
+                    <h1>Login</h1>
+    
+                    <div>
+                        <label id="labelCreateUser" for="createUser">User</label>
+                        <input id="createUser" type="text" required>
+                    </div>
+                    
+                    <div>
+                        <label id="labelPassword" for="createPassword">Password</label>
+                        <input id="password" type="password" required>
+                        <p class="eye"></p>
+                    </div>
+    
+                    <button onclick="login()">Login</button>
+    
+                    <P><a href="cadastro.html">Register</a></P>
+                    <p>------------------------ or ------------------------</p>
+                    <p><a href="forgetpassword.html">Forget your password?</a></p>
+                </div>
                 </form>
-                <P><a href="cadastro.html">Register</a></P>
-                <p>------------------------ or ------------------------</p>
-                <p><a href="forgetpassword.html">Forget your password?</a></p>
-            </div>
         </section>
     </main>
 

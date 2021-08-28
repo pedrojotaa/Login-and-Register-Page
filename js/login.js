@@ -1,6 +1,6 @@
-let eye = document.querySelector('.eye')
+let eyeLogin = document.querySelector('.eye')
 
-eye.addEventListener('click', ()=> {
+eyeLogin.addEventListener('click', ()=> {
     let inputPassword = document.querySelector('#password')
 
     if(inputPassword.getAttribute('type')=='password'){
