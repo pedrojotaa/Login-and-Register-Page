@@ -184,3 +184,14 @@
     padding: 10px;
     display: none;
 }
+
+#msgErro{
+    background: lightcoral;
+    color: red;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+    display: none;
+}

@@ -25,10 +25,11 @@
         <section>
                 <form class="caixa">
                     <h1>Login</h1>
+                    <p id="msgErro"></p>
     
                     <div>
-                        <label id="labelCreateUser" for="createUser">User</label>
-                        <input id="createUser" type="text" required>
+                        <label id="labelUser" for="createUser">User</label>
+                        <input id="user" type="text" required>
                     </div>
                     
                     <div>
@@ -37,7 +38,7 @@
                         <p class="eye"></p>
                     </div>
     
-                    <button onclick="login()">Login</button>
+                    <button id="login">Login</button>
     
                     <P><a href="cadastro.html">Register</a></P>
                     <p>------------------------ or ------------------------</p>
