@@ -7,64 +7,61 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="./css/bootstrap/css/bootstrap.css">
 
-    <title>Register Page</title>
+    <title>Register</title>
 </head>
 <body>
-    <header class="cabecalho">
-        <div>
-            <h1>Register Page</h1>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li>Sobre</li>
-                <li>Sobre</li>
-            </ul>
+    <header id="header">
+        <div id="menu">
+            <h1>Welcome to Register</h1>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Sobre</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contato</a>
+                </li>
+              </ul>
         </div>
     </header>
 
-    <main class="formulario">
-        <section>
-                <form class="caixa">
-                    <h1>Register</h1>
+    <main>
+        <section id="main">
+                <form class="box">
+                    
+                    <h2>Register</h2>
                     <p id='registerError'></p>
                     <p id='registerSuccess'></p>
-
-                    <div>
+    
+                    <div class="input">
                         <label id="labelCreateName" for="createName">Name</label>
                         <input id="createName" type="text" required>
-                    </div>
-
-                    <div>
                         <label id="labelCreateUser" for="createUser">User</label>
                         <input id="createUser" type="text" required>
-                    </div>
-
-                    <div>
                         <label id="labelCreateEmail" for="createEmail">E-mail</label>
                         <input id="createEmail" type="text" required>
-                    </div>
-
-                    <div>
                         <label id="labelCreatePassword" for="createPassword">Password</label>
                         <input id="createPassword" type="password" required>
-                        <p class="eye-create"></p>
-                    </div>
-
-                    <div>
+                        <i class="bi bi-eye-slash"></i>
                         <label id="labelConfirmPassword" for="confirmPassword">Confirm Password</label>
                         <input id="confirmPassword" type="password" required>
-                        <p class="eye-confirm"></p>
+                        <i class="bi bi-eye-slash"></i>
                     </div>
-
-                    <button id='registra'>Register</button>
+    
+                    <button id="registerButton">Register</button>
+                    
                 </form>
         </section>
     </main>
 
-    <footer class="rodape">
+    <footer id="footer">
         <div>
-            <h1>Page created to learn</h6>
+            <h1></i>Page created with HTML | CSS | JS | BootStrap</h6>
         </div>
     </footer>
+
     <script type="module" src="js/register.js"></script>
     <script src="./css/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>

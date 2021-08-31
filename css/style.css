@@ -61,6 +61,7 @@ html, body{
     background-color: rgba(210, 214, 224, 0.2);
     border-radius: 5px;
     padding: 1rem 2rem;
+    margin-top: 1rem;
 }
 
 #main .box h2{
@@ -78,19 +79,21 @@ html, body{
 
 #main .box .input label{
     color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 0.4rem;
     font-weight: bold;
 }
 
 #main .box .input input{
     border-radius: 3px;
-    margin-bottom: 0.4rem;
     border: none;
     outline: none;
+    margin-bottom: 0.4rem;
+    padding: 0 1rem;
     background-color: rgba(210, 214, 224, 0.2);
 }
 
+#main .box #registerButton,
 #main .box #loginButton{
     border-radius: 5px;
     margin-bottom: 0.4rem;
@@ -105,6 +108,7 @@ html, body{
     
 }
 
+#main .box #registerButton:hover,
 #main .box #loginButton:hover{
     background: white;
     color: purple;
@@ -114,6 +118,7 @@ html, body{
 #main .box .register-links{
     text-align: center;
     font-weight: bold;
+    font-size: 0.8rem;
 }
 
 #main .box .register-links p{
@@ -130,9 +135,7 @@ html, body{
     text-decoration: underline;
 }
 
-
-
-
+/* ESTILIZANDO O VISUALIZADOR DE SENHA */
 
 .eye-create{
     height: 10px;
@@ -156,21 +159,22 @@ html, body{
 
 /* ESTILIZANDO O FOOTER */
 
-.rodape{
-    padding: 40px;
-}
-
-.rodape div{
-    width: 940px;
+#footer div{
+    max-width: 940px;
+    width: 100%;
     margin: 0 auto;
 }
 
-.rodape h1{
-    font-size: 20px;
+#footer h1{
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
     font-weight: bold;
-    text-align: center;
+    color: white;
+    margin: 3rem 0;
 }
 
+/* ESTILIZANDO MSG DE ERRO */
 
 #registerError{
     background: lightcoral;
