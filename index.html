@@ -5,45 +5,50 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="./css/bootstrap/css/bootstrap.css">
 
-    <title>Login Page</title>
+    <title>Login</title>
 </head>
 <body>
-    <header class="cabecalho">
-        <div>
-            <h1>Login Page</h1>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li>Sobre</li>
-                <li>Sobre</li>
-            </ul>
+    <header id="header">
+        <div id="menu">
+            <h1>Welcome</h1>
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Sobre</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contato</a>
+                </li>
+              </ul>
         </div>
     </header>
 
-    <main class="formulario">
-        <section>
-                <form class="caixa">
-                    <h1>Login</h1>
+    <main>
+        <section id="main">
+                <form class="box">
+                    
+                    <h2>Login</h2>
                     <p id="msgErro"></p>
     
-                    <div>
+                    <div class="input">
                         <label id="labelUser" for="createUser">User</label>
                         <input id="user" type="text" required>
-                    </div>
-                    
-                    <div>
                         <label id="labelPassword" for="createPassword">Password</label>
-                        <input id="password" type="password" required>
-                        <p class="eye"></p>
+                        <input id="password" type="password" required >
+                        <i class="bi bi-eye-slash"></i>
                     </div>
     
-                    <button id="login">Login</button>
-    
-                    <P><a href="cadastro.html">Register</a></P>
-                    <p>------------------------ or ------------------------</p>
-                    <p><a href="forgetpassword.html">Forget your password?</a></p>
-                </div>
+                    <button id="loginButton">Login</button>
+                    
+                    <div class="register-links">
+                        <P><a href="cadastro.html">Register</a></P>
+                        <p>or</p>
+                        <p><a href="forgetpassword.html">Forget your password?</a></p>
+                    </div>
                 </form>
         </section>
     </main>
@@ -53,6 +58,8 @@
             <h1>Page created to learn</h6>
         </div>
     </footer>
+
     <script type="module" src="js/login.js"></script>
+    <script src="./css/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -5,6 +5,8 @@ login.addEventListener('click', (evento)=>{
 
     evento.preventDefault()
 
+    // UTILIZANDO O DOM
+
     let labelUser = document.querySelector('#labelUser')
     let user = document.querySelector('#user')
 
@@ -13,9 +15,11 @@ login.addEventListener('click', (evento)=>{
 
     let erro = document.querySelector('#msgErro')
 
+    // CRIA UMA CONST COM ARRAY VAZIA PARA O LOCAOL STORAGE
+
     let listaUser = []
 
-    // criando objeto que eu quero que recebe parametros//
+    // OBJETO QUE IRA RECEBER PARAMETROS
 
     let valid = {
         nome: '',
@@ -26,7 +30,8 @@ login.addEventListener('click', (evento)=>{
 
     listaUser = JSON.parse(localStorage.getItem('cadastra'))
 
-    // o foreach vai varrer tudo//
+    // FOREACH VARRE TODOS OS ITENS
+
     listaUser.forEach((item)=>{
         if(user.value == item.userCad && password.value == item.senhaCad){
             valid = {
@@ -40,25 +45,28 @@ login.addEventListener('click', (evento)=>{
     if(user.value == valid.usuario && password.value == valid.senha){
         labelUser.setAttribute('style', 'color: green')
         user.setAttribute('style', 'border-color: green')
+
         labelPassword.setAttribute('style', 'color: green')
         password.setAttribute('style', 'border-color: green')
+
         erro.setAttribute('style', 'display: none')
 
-        let token = Math.random().toString(16).substr(2) + Math.random().toString(16).substr(2)
+        // NAO UTILIZA O JSON.STRINGFY POIS TOKEN JA É UMA STRING
 
+        let token = Math.random().toString(16).substr(2) + Math.random().toString(16).substr(2)
         localStorage.setItem('token', token)
 
         window.location.href = 'http://localhost:5000/logado.html?'
-
-        //local storage so aceita string//
-
     }else{
         labelUser.setAttribute('style', 'color: red')
         user.setAttribute('style', 'border-color: red')
+
         labelPassword.setAttribute('style', 'color: red') 
         password.setAttribute('style', 'border-color: red')
+
         erro.setAttribute('style', 'display: block')
         erro.innerHTML = 'Usuario ou senha incorretos'
+
         user.focus()
     }
 })
