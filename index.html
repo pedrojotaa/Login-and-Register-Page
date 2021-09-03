@@ -9,10 +9,11 @@
 
     <title>Login</title>
 </head>
+
 <body>
-    <header id="header">
-        <div id="menu">
-            <h1>Welcome to Login</h1>
+    <header>
+        <div id="cabecalho">
+            <h1>Welcome</h1>
             <ul class="nav justify-content-end">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
@@ -28,34 +29,38 @@
     </header>
 
     <main>
-        <section id="main">
-                <form class="box">
-                    
-                    <h2>Login</h2>
-                    <p id="msgErro"></p>
+        <section id="container">
+            <form class="box">
+
+                <h2>Login</h2>
+
+                <p id="msgErro"></p>
     
-                    <div class="input">
-                        <label id="labelUser" for="createUser">User</label>
-                        <input id="user" type="text" required>
-                        <label id="labelPassword" for="createPassword">Password</label>
-                        <input id="password" type="password" required >
-                        <i class="bi bi-eye-slash"></i>
-                    </div>
-    
-                    <button id="loginButton">Login</button>
+                <div class="label-float">
+                    <input id="user" type="text" placeholder="" required>
+                    <label id="labelUser" for="createUser">User</label>
+                </div>
+
+                <div class="label-float">
+                    <input id="password" type="password" placeholder="" required>
+                    <label id="labelPassword" for="createPassword">Password</label>
+                    <i class="bi bi-eye-slash show-password"></i>
+                </div>
                     
-                    <div class="register-links">
-                        <P><a href="cadastro.html">Register</a></P>
-                        <p>or</p>
-                        <p><a href="forgetpassword.html">Forget your password?</a></p>
-                    </div>
-                </form>
+                <button id="loginButton">Login</button>
+                    
+                <hr class="linha">
+
+                <div class="register-link">
+                    <p><a href="cadastro.html">Cadastre-se</a></p>
+                </div>
+            </form>
         </section>
     </main>
 
-    <footer id="footer">
-        <div>
-            <h1></i>Page created with HTML | CSS | JS | BootStrap</h6>
+    <footer>
+        <div id="rodape">
+            <h3>Created by HTML | CSS | JS | BootStrap</h3>
         </div>
     </footer>
 

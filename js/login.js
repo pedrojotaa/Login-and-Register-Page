@@ -1,7 +1,7 @@
-let eyeLogin = document.querySelector('.eye')
-let login = document.querySelector('#login')
+let showPassword = document.querySelector('.show-password')
+let loginButton = document.querySelector('#loginButton')
 
-login.addEventListener('click', (evento)=>{
+loginButton.addEventListener('click', (evento)=>{
 
     evento.preventDefault()
 
@@ -15,7 +15,7 @@ login.addEventListener('click', (evento)=>{
 
     let erro = document.querySelector('#msgErro')
 
-    // CRIA UMA CONST COM ARRAY VAZIA PARA O LOCAOL STORAGE
+    // ARRAY VAZIA PARA O LOCAOL STORAGE
 
     let listaUser = []
 
@@ -27,6 +27,8 @@ login.addEventListener('click', (evento)=>{
         email: '',
         senha: ''
     }
+
+    // PARSE TRANSFORMA STRING EM OBJETO
 
     listaUser = JSON.parse(localStorage.getItem('cadastra'))
 
@@ -65,13 +67,13 @@ login.addEventListener('click', (evento)=>{
         password.setAttribute('style', 'border-color: red')
 
         erro.setAttribute('style', 'display: block')
-        erro.innerHTML = 'Usuario ou senha incorretos'
+        erro.innerHTML = 'Usuario ou Senha Incorretos'
 
         user.focus()
     }
 })
 
-eyeLogin.addEventListener('click', ()=> {
+showPassword.addEventListener('click', ()=> {
     let inputPassword = document.querySelector('#password')
 
     if(inputPassword.getAttribute('type')=='password'){

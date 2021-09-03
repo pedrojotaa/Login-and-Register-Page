@@ -1,19 +1,24 @@
-/* ESTILIZANDO O HEADER */
-
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-html, body{
+*{
+    margin: 0;
+    padding: 0;
     font-family: Ubuntu, Arial;
-    width: 100%;
-    height: 100vh;
+}
+
+body{
     background-image: url("./background.png");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-attachment: fixed; 
-    background-position: center; 
+    background-position: center;
+    scroll-behavior: smooth;
+    height: 100vh;
 }
 
-#menu{
+/* ESTILIZANDO O HEADER */
+
+#cabecalho{
     display: flex;
     justify-content: space-between;
     max-width: 940px;
@@ -21,7 +26,7 @@ html, body{
     margin: 0 auto;
 }
 
-#menu h1{
+#cabecalho h1{
     font-size: 3.2rem;
     margin: 1rem;
     color: purple;
@@ -29,149 +34,121 @@ html, body{
     font-weight: bold;
 }
 
-#menu a{
+#cabecalho a{
     text-decoration: none;
     color: white;
     margin: 2rem 0;
     text-shadow: 5px 5px 5px black;
     font-size: 1.2rem;
     font-weight: bold;
-}
-
-#menu a:hover{
-    color: purple;
     transition: 1s;
 }
 
-#menu a:focus{
+#cabecalho a:hover{
     color: purple;
 }
 
-/* ESTILIZANDO O MAIN DO LOGIN*/
-
-#main{
-    display: flex;
-    justify-content: center;
-    max-width: 940px;
-    width: 100%;
-    margin: 0 auto;
+#cabecalho a:focus{
+    color: purple;
 }
 
-#main .box{
-    background-color: rgba(210, 214, 224, 0.2);
+/* ESTILIZANDO O MAIN */
+
+#container{
+    display: flex;
+    justify-content: center;
+}
+
+#container .box{
+    background: #ffffff70;
+    box-shadow: 5px 5px 5px #00000080;
     border-radius: 5px;
     padding: 1rem 2rem;
-    margin-top: 1rem;
 }
 
-#main .box h2{
+#container .box h2{
     font-size: 1.3rem;
-    text-align: center;
-    color: white;
     font-weight: bold;
+    text-align: center;
+    color: #ffffff;
 }
 
-#main .box .input{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+#msgErro{
+    background: lightcoral;
+    color: red;
+    border-radius: 5px;
+    margin: 1rem auto;
+    padding: 10px;
+    display: none;
+    text-align: center;
 }
 
-#main .box .input label{
-    color: white;
+input{
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #000000;
+    display: block;
+    outline: none;
+}
+
+label{
+    color: #ffffff;
     font-size: 1rem;
     margin-bottom: 0.4rem;
-    font-weight: bold;
 }
 
-#main .box .input input{
-    border-radius: 3px;
-    border: none;
-    outline: none;
-    margin-bottom: 0.4rem;
-    padding: 0 1rem;
-    background-color: rgba(210, 214, 224, 0.2);
-}
-
-#main .box #registerButton,
-#main .box #loginButton{
+#container .box #registerButton,
+#container .box #loginButton{
     border-radius: 5px;
-    margin-bottom: 0.4rem;
-    border: none;
+    border: 0;
     background: purple;
+    font-size: 1.1rem;
+    font-weight: bold;
     margin: 1rem 0;
+    padding: 0.2rem;
     width: 100%;
     color: white;
-    font-size: 1.1rem;
-    padding: 0.2rem 0;
-    font-weight: bold;
-    
+    transition: 1s;
 }
 
-#main .box #registerButton:hover,
-#main .box #loginButton:hover{
+#container .box #registerButton:hover,
+#container .box #loginButton:hover{
     background: white;
+    color: purple;
+}
+
+#container .box .linha{
+    height: 2px;
+    color: #000000;
+}
+
+#container .box .register-link,
+#container .box .register-link a{
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
     color: purple;
     transition: 1s;
 }
 
-#main .box .register-links{
-    text-align: center;
-    font-weight: bold;
-    font-size: 0.8rem;
-}
-
-#main .box .register-links p{
-    color: white;
-}
-
-#main .box .register-links a{
-    text-decoration: none;
-    color: white;
-    transition: 1s;
-}
-
-#main .box .register-links a:hover{
+#container .box .register-link a:hover{
     text-decoration: underline;
-}
-
-/* ESTILIZANDO O VISUALIZADOR DE SENHA */
-
-.eye-create{
-    height: 10px;
-    width: 10px;
-    background: black;
-    position: absolute;
-    right: 5%;
-    top: 63%;
-    cursor: pointer;
-}
-
-.eye-confirm{
-    height: 10px;
-    width: 10px;
-    background: black;
-    position: absolute;
-    right: 5%;
-    top: 79%;
-    cursor: pointer;
+    color: white;
 }
 
 /* ESTILIZANDO O FOOTER */
 
-#footer div{
-    max-width: 940px;
-    width: 100%;
-    margin: 0 auto;
-}
-
-#footer h1{
+#rodape{
     display: flex;
     justify-content: center;
-    font-size: 10px;
-    font-weight: bold;
-    color: white;
-    margin: 3rem 0;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+#rodape h3{
+    font-size: .8rem;
+    color: #ffffff;
 }
 
 /* ESTILIZANDO MSG DE ERRO */
@@ -198,13 +175,41 @@ html, body{
     display: none;
 }
 
-#msgErro{
-    background: lightcoral;
-    color: red;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 10px;
-    display: none;
+/* ESTILIZANDO O SCROLL */
+
+::-webkit-scrollbar {
+    width: 10px; 
+    
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fff; 
+    box-shadow: inset 0 0 .2rem black;
+}  
+
+::-webkit-scrollbar-thumb {
+    background: #2A3338; 
+}
+
+
+/* ESTILIZANDO O VISUALIZADOR DE SENHA */
+/*
+.eye-create{
+    height: 10px;
+    width: 10px;
+    background: black;
+    position: absolute;
+    right: 5%;
+    top: 63%;
+    cursor: pointer;
+}
+
+.eye-confirm{
+    height: 10px;
+    width: 10px;
+    background: black;
+    position: absolute;
+    right: 5%;
+    top: 79%;
+    cursor: pointer;
 }
