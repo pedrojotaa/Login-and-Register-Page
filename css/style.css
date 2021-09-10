@@ -18,12 +18,55 @@ body{
 
 /* ESTILIZANDO O HEADER */
 
+.background-transparent{
+    background: #ffffff50;
+}
+
 #cabecalho{
     display: flex;
     justify-content: space-between;
-    max-width: 940px;
+    max-width: 840px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 1rem;
+}
+
+#cabecalho #logo{
+    font-size: 2rem;
+    color: #ffffff;
+    padding: 0.3rem 1rem;
+}
+
+#cabecalho #innerButton{
+    background: #ffffff;
+    color: purple;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 1rem;
+    padding: 0.3rem 1.2rem;
+    transition: 1s;
+    font-size: .8rem;
+}
+
+#cabecalho #innerButton:hover{
+    background: purple;
+    color: #ffffff;
+}
+
+#index-content{
+    display: flex;
+    flex-direction: column;
+    max-width: 840px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 10rem;
+}
+
+#index-content p{
+    font-size: 50px;
+    color: #ffffff;
+    margin: 0 2rem;
 }
 
 #cabecalho h1{
