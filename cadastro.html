@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="./css/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
     <title>Register</title>
 </head>
@@ -33,29 +34,30 @@
             <form class="box">
                     
                 <h2>Register</h2>
+
                 <p id='registerError'></p>
                 <p id='registerSuccess'></p>
     
                 <div class="label-float">
-                    <input id="createName" type="text" required>
+                    <input id="createName" type="text" placeholder="" required>
                     <label id="labelCreateName" for="createName">Name</label>
-                <div>
-                    <input id="createUser" type="text" required>
+                <div class="label-float">
+                    <input id="createUser" type="text" placeholder="" required>
                     <label id="labelCreateUser" for="createUser">User</label>
                 </div>
-                <div>
-                    <input id="createEmail" type="text" required>
+                <div class="label-float">
+                    <input id="createEmail" type="text" placeholder="" required>
                     <label id="labelCreateEmail" for="createEmail">E-mail</label>
                 </div>
-                <div>
-                    <input id="createPassword" type="password" required>
+                <div class="label-float">
+                    <input id="createPassword" type="password" placeholder="" required>
                     <label id="labelCreatePassword" for="createPassword">Password</label>
-                    <i class="bi bi-eye-slash"></i>
+                    <i class="bi bi-eye-fill show-password"></i>
                 </div>
-                <div>
-                    <input id="confirmPassword" type="password" required>
-                    <label id="labelConfirmPassword" for="confirmPassword">Confirm Password</label>
-                    <i class="bi bi-eye-slash"></i>
+                <div class="label-float">
+                    <input id="confirmPassword" type="password" placeholder="" required>
+                    <label id="labelConfirmPassword" for="confirmPassword">Confirm</label>
+                    <i class="bi bi-eye-fill show-password"></i>
                 </div>
                     
                 <div>

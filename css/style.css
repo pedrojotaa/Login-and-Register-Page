@@ -73,16 +73,6 @@ body{
     color: #ffffff;
 }
 
-#msgErro{
-    background: lightcoral;
-    color: red;
-    border-radius: 5px;
-    margin: 1rem auto;
-    padding: 10px;
-    display: none;
-    text-align: center;
-}
-
 input{
     background: transparent;
     border: 0;
@@ -95,6 +85,25 @@ label{
     color: #ffffff;
     font-size: 1rem;
     margin-bottom: 0.4rem;
+}
+
+.label-float{
+    position: relative;
+    margin: 1.5rem 0;
+}
+
+.label-float label{
+    position: absolute;
+    top: 0;
+    font-size: 1.1rem;
+    transition: all .3s ease-out;
+    pointer-events: none;
+}
+
+.label-float input:focus + label,
+.label-float input:valid + label{
+    top: -20px;
+    font-size: 1rem;
 }
 
 #container .box #registerButton,
@@ -153,6 +162,15 @@ label{
 
 /* ESTILIZANDO MSG DE ERRO */
 
+#msgErro{
+    background: lightcoral;
+    color: red;
+    border-radius: 5px;
+    padding: 6px;
+    display: none;
+    text-align: center;
+}
+
 #registerError{
     background: lightcoral;
     color: red;
@@ -191,25 +209,10 @@ label{
     background: #2A3338; 
 }
 
-
 /* ESTILIZANDO O VISUALIZADOR DE SENHA */
-/*
-.eye-create{
-    height: 10px;
-    width: 10px;
-    background: black;
-    position: absolute;
-    right: 5%;
-    top: 63%;
-    cursor: pointer;
-}
 
-.eye-confirm{
-    height: 10px;
-    width: 10px;
-    background: black;
+.show-password{
     position: absolute;
-    right: 5%;
-    top: 79%;
-    cursor: pointer;
+    top: 0;
+    right: 13px;
 }
