@@ -34,6 +34,30 @@ let registerButton = document.querySelector('#registerButton')
 let registerErro = document.querySelector('#registerError')
 let registerSuccess = document.querySelector('#registerSuccess')
 
+const validaEmail = (event) =>{
+    const input = event.currentTarget
+    const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    const emailTest = regex.test(input.value)
+
+    if(!emailTest){
+        registerButton.setAttribute('disabled', 'disabled')
+//      inputEmail.classList.add('error')
+        labelEmail.setAttribute('style', 'color: red')
+        labelEmail.innerHTML= 'Email *invalido'
+        inputEmail.setAttribute('style', 'border-color: red')
+        validEmail = false
+    }else{
+        registerButton.removeAttribute('disabled')
+//      inputEmail.classList.remove('error')
+        labelEmail.setAttribute('style', 'color: green')
+        labelEmail.innerHTML= 'Email *valido'
+        inputEmail.setAttribute('style', 'border-color: green')
+        validEmail = true
+    }
+}
+
+inputEmail.addEventListener('input', validaEmail)
+
 ///////////////////////////////////////////////////////////////////////////////////////
 
 /* FUNÇÃO PARA VALIDAR OS CAMPOS */
@@ -66,19 +90,20 @@ inputUser.addEventListener('keyup', ()=> {
     }
 })
 
-inputEmail.addEventListener('keyup', ()=> {
-    if(inputEmail.value.length <=5){
-        labelEmail.setAttribute('style', 'color: red')
-        labelEmail.innerHTML= 'Email *insira no minimo 6 caracteres'
-        inputEmail.setAttribute('style', 'border-color: red')
-        validEmail = false
-    }else {
-        labelEmail.setAttribute('style', 'color: green')
-        labelEmail.innerHTML= 'Email'
-        inputEmail.setAttribute('style', 'border-color: green')
-        validEmail = true
-    }
-})
+//inputEmail.addEventListener('keyup', ()=> {
+//    if(inputEmail.value.length <=5){
+//        labelEmail.setAttribute('style', 'color: red')
+//        labelEmail.innerHTML= 'Email *insira no minimo 6 caracteres'
+//        inputEmail.setAttribute('style', 'border-color: red')
+//        validEmail = false
+//    }else {
+//        labelEmail.setAttribute('style', 'color: green')
+//        labelEmail.innerHTML= 'Email'
+//        inputEmail.setAttribute('style', 'border-color: green')
+//        validEmail = true
+//    }
+//})
+
 
 inputPassword.addEventListener('keyup', ()=> {
     if(inputPassword.value.length <=5){

@@ -262,3 +262,15 @@ label{
     right: 13px;
     cursor: pointer;
 }
+
+/* ESTILIZANDO O REGEX */
+
+#container .box #registerButton:disabled{
+    cursor: not-allowed;
+    background: #2A3338;
+    color: #ffffff;
+}
+
+/* #inputCreateEmail.error{
+    background: red;
+} */
