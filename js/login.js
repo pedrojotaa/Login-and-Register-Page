@@ -1,80 +1,96 @@
-let showPassword = document.querySelector('.show-password')
+let viewPassword = document.querySelector('.view-password')
 let loginButton = document.querySelector('#loginButton')
 
-loginButton.addEventListener('click', (evento)=>{
+// LÓGICA DO BOTÃO DE LOGIN
 
-    evento.preventDefault()
+loginButton.addEventListener('click', ()=>{
 
-    // UTILIZANDO O DOM
+    
 
     let labelUser = document.querySelector('#labelUser')
-    let user = document.querySelector('#user')
+    let inputUser = document.querySelector('#inputUser')
 
     let labelPassword = document.querySelector('#labelPassword')
-    let password = document.querySelector('#password')
+    let inputPassword = document.querySelector('#inputPassword')
 
-    let erro = document.querySelector('#msgErro')
+    let loginErro = document.querySelector('#loginErro')
 
-    // ARRAY VAZIA PARA O LOCAOL STORAGE
+    // CRIA UM ARRAY VAZIO PARA O LOCAOL STORAGE
 
-    let listaUser = []
+    let listUser = []
 
-    // OBJETO QUE IRA RECEBER PARAMETROS
+    // CRIA UM OBJETO QUE IRA RECEBER PARAMETROS
 
     let valid = {
-        nome: '',
-        usuario: '',
+        name: '',
+        user: '',
         email: '',
-        senha: ''
+        password: ''
     }
+    
+    // VAI NO LOCAL STORAGE E PEGA O OBJETO cadastra CRIADO NO REGISTRO
 
-    // PARSE TRANSFORMA STRING EM OBJETO
-
-    listaUser = JSON.parse(localStorage.getItem('cadastra'))
+    listUser = JSON.parse(localStorage.getItem('cadastro'))
 
     // FOREACH VARRE TODOS OS ITENS
 
-    listaUser.forEach((item)=>{
-        if(user.value == item.userCad && password.value == item.senhaCad){
+    listUser.forEach((item)=>{
+
+        //  SE O VALOR DO USUARIO = VALOR USSERCAD DO cadastra
+
+        if(inputUser.value == item.userCad && inputPassword.value == item.passwordCad){
             valid = {
-                nome: item.nomeCad,
-                usuario: item.userCad,
+                name: item.nameCad,
+                user: item.userCad,
                 email: item.emailCad,
-                senha: item.senhaCad
+                password: item.passwordCad
+            }
+        }else{
+            if(item == null){
+                loginErro.setAttribute('style', 'display: block')
+                loginErro.innerHTML = 'Sem usuários cadastrados'
+    
+                inputUser.focus()
             }
         }
     })
-    if(user.value == valid.usuario && password.value == valid.senha){
-        labelUser.setAttribute('style', 'color: green')
-        user.setAttribute('style', 'border-color: green')
+        if(inputUser.value == valid.user && inputPassword.value == valid.password){
+            labelUser.setAttribute('style', 'color: green')
+            inputUser.setAttribute('style', 'border-color: green')
 
-        labelPassword.setAttribute('style', 'color: green')
-        password.setAttribute('style', 'border-color: green')
+            labelPassword.setAttribute('style', 'color: green')
+            inputPassword.setAttribute('style', 'border-color: green')
 
-        erro.setAttribute('style', 'display: none')
+            loginErro.setAttribute('style', 'display: none')
 
-        // NAO UTILIZA O JSON.STRINGFY POIS TOKEN JA É UMA STRING
+            // CRIANDO UM TOKEN
 
-        let token = Math.random().toString(16).substr(2) + Math.random().toString(16).substr(2)
-        localStorage.setItem('token', token)
+            let token = Math.random().toString(16).substr(2) + Math.random().toString(16).substr(2)
 
-        window.location.href = 'http://localhost:5000/logado.html?'
-    }else{
-        labelUser.setAttribute('style', 'color: red')
-        user.setAttribute('style', 'border-color: red')
+            // NAO UTILIZA O JSON.STRINGFY POIS O TOKEN JA É UMA STRING
 
-        labelPassword.setAttribute('style', 'color: red') 
-        password.setAttribute('style', 'border-color: red')
+            localStorage.setItem('token', token)
 
-        erro.setAttribute('style', 'display: block')
-        erro.innerHTML = 'Usuario ou Senha Incorretos'
+            setTimeout(()=>{
+                window.location.href = 'http://localhost:5000/logon.html?'
+            }, 3000)
+            
+        }else{
+            labelUser.setAttribute('style', 'color: red')
+            inputUser.setAttribute('style', 'border-color: red')
 
-        user.focus()
-    }
-})
+            labelPassword.setAttribute('style', 'color: red') 
+            inputPassword.setAttribute('style', 'border-color: red')
 
-showPassword.addEventListener('click', ()=> {
-    let inputPassword = document.querySelector('#password')
+            loginErro.setAttribute('style', 'display: block')
+            loginErro.innerHTML = 'Usuario ou Senha Incorretos'
+
+            inputUser.focus()
+        }
+    })
+
+viewPassword.addEventListener('click', ()=> {
+    let inputPassword = document.querySelector('#inputPassword')
 
     if(inputPassword.getAttribute('type')=='password'){
         inputPassword.setAttribute('type','text')

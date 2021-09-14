@@ -1,161 +1,168 @@
-/* CHAMANDO CLASSES E ID DO HTML PARA CRIAR CONSTANTES */
+/* VISUALIZADOR DE SENHA */
 
-let eyeCreate = document.querySelector('.eye-create')
-let eyeConfirm = document.querySelector('.eye-confirm')
+let viewPasswordRegister = document.querySelector('.view-register')
+let viewPasswordConfirm = document.querySelector('.view-confirm')
 
-let labelNome = document.querySelector('#labelCreateName')
-let nome = document.querySelector('#createName')
-let validaNome = false
+/* LABEL E INPUT */
 
-let labelUsuario = document.querySelector('#labelCreateUser')
-let usuario = document.querySelector('#createUser')
-let validaUsuario = false
+let labelName = document.querySelector('#labelCreateName')
+let inputName = document.querySelector('#inputCreateName')
+let validName = false
+
+let labelUser = document.querySelector('#labelCreateUser')
+let inputUser = document.querySelector('#inputCreateUser')
+let validUser = false
 
 let labelEmail = document.querySelector('#labelCreateEmail')
-let email = document.querySelector('#createEmail')
-let validaEmail = false
+let inputEmail = document.querySelector('#inputCreateEmail')
+let validEmail = false
 
-let labelSenha = document.querySelector('#labelCreatePassword')
-let senha = document.querySelector('#createPassword')
-let validaSenha = false
+let labelPassword = document.querySelector('#labelCreatePassword')
+let inputPassword = document.querySelector('#inputCreatePassword')
+let validPassword = false
 
-let labelConfirmaSenha = document.querySelector('#labelConfirmPassword')
-let confirmaSenha = document.querySelector('#confirmPassword')
-let validaConfirmaSenha = false
+let labelConfirmPassword = document.querySelector('#labelConfirmPassword')
+let inputConfirmPassword = document.querySelector('#inputConfirmPassword')
+let validConfirmPassword = false
 
-let registra = document.querySelector('#registra')
+/* BOTÃO DE REGISTRO */
 
-let registraErro = document.querySelector('#registerError')
-let registraSuccess = document.querySelector('#registerSuccess')
+let registerButton = document.querySelector('#registerButton')
 
-/* FUNÇÃO PARA VISUALIZAR A SENHA */
+/* ERRO DO REGISTRO */
 
-eyeCreate.addEventListener('click', ()=> {
-    let inputPassword = document.querySelector('#createPassword')
+let registerErro = document.querySelector('#registerError')
+let registerSuccess = document.querySelector('#registerSuccess')
 
-    if(inputPassword.getAttribute('type')=='password'){
-        inputPassword.setAttribute('type','text')
-    } else{
-        inputPassword.setAttribute('type', 'password')
-    }
-})
-
-eyeConfirm.addEventListener('click', ()=> {
-    let inputPassword = document.querySelector('#confirmPassword')
-
-    if(inputPassword.getAttribute('type')=='password'){
-        inputPassword.setAttribute('type','text')
-    } else{
-        inputPassword.setAttribute('type', 'password')
-    }
-})
+///////////////////////////////////////////////////////////////////////////////////////
 
 /* FUNÇÃO PARA VALIDAR OS CAMPOS */
 
-nome.addEventListener('keyup', ()=> {
-    if(nome.value.length <=3){
-        labelNome.setAttribute('style', 'color: red')
-        labelNome.innerHTML= 'Nome *insira no minimo 4 caracteres'
-        nome.setAttribute('style', 'border-color: red')
-        validaNome = false
+inputName.addEventListener('keyup', ()=> {
+    if(inputName.value.length <=3){
+        labelName.setAttribute('style', 'color: red')
+        labelName.innerHTML= 'Nome *insira no minimo 4 caracteres'
+        inputName.setAttribute('style', 'border-color: red')
+        validName = false
     }else {
-        labelNome.setAttribute('style', 'color: green')
-        labelNome.innerHTML= 'Nome'
-        nome.setAttribute('style', 'border-color: green')
-        validaNome = true
+        labelName.setAttribute('style', 'color: green')
+        labelName.innerHTML= 'Nome'
+        inputName.setAttribute('style', 'border-color: green')
+        validName = true
     }
 })
 
-usuario.addEventListener('keyup', ()=> {
-    if(usuario.value.length <=5){
-        labelUsuario.setAttribute('style', 'color: red')
-        labelUsuario.innerHTML= 'Usuario *insira no minimo 6 caracteres'
-        usuario.setAttribute('style', 'border-color: red')
-        validaUsuario = false
+inputUser.addEventListener('keyup', ()=> {
+    if(inputUser.value.length <=5){
+        labelUser.setAttribute('style', 'color: red')
+        labelUser.innerHTML= 'Usuario *insira no minimo 6 caracteres'
+        inputUser.setAttribute('style', 'border-color: red')
+        validUser = false
     }else {
-        labelUsuario.setAttribute('style', 'color: green')
-        labelUsuario.innerHTML= 'Usuario'
-        usuario.setAttribute('style', 'border-color: green')
-        validaUsuario = true
+        labelUser.setAttribute('style', 'color: green')
+        labelUser.innerHTML= 'Usuario'
+        inputUser.setAttribute('style', 'border-color: green')
+        validUser = true
     }
 })
 
-email.addEventListener('keyup', ()=> {
-    if(email.value.length <=5){
+inputEmail.addEventListener('keyup', ()=> {
+    if(inputEmail.value.length <=5){
         labelEmail.setAttribute('style', 'color: red')
         labelEmail.innerHTML= 'Email *insira no minimo 6 caracteres'
-        email.setAttribute('style', 'border-color: red')
-        validaEmail = false
+        inputEmail.setAttribute('style', 'border-color: red')
+        validEmail = false
     }else {
         labelEmail.setAttribute('style', 'color: green')
         labelEmail.innerHTML= 'Email'
-        email.setAttribute('style', 'border-color: green')
-        validaEmail = true
+        inputEmail.setAttribute('style', 'border-color: green')
+        validEmail = true
     }
 })
 
-senha.addEventListener('keyup', ()=> {
-    if(senha.value.length <=5){
-        labelSenha.setAttribute('style', 'color: red')
-        labelSenha.innerHTML= 'Senha *insira no minimo 6 caracteres'
-        senha.setAttribute('style', 'border-color: red')
-        validaSenha = false
+inputPassword.addEventListener('keyup', ()=> {
+    if(inputPassword.value.length <=5){
+        labelPassword.setAttribute('style', 'color: red')
+        labelPassword.innerHTML= 'Senha *insira no minimo 6 caracteres'
+        inputPassword.setAttribute('style', 'border-color: red')
+        validPassword = false
     }else {
-        labelSenha.setAttribute('style', 'color: green')
-        labelSenha.innerHTML= 'Email'
-        senha.setAttribute('style', 'border-color: green')
-        validaSenha = true
+        labelPassword.setAttribute('style', 'color: green')
+        labelPassword.innerHTML= 'Senha correta'
+        inputPassword.setAttribute('style', 'border-color: green')
+        validPassword = true
     }
 })
 
-confirmaSenha.addEventListener('keyup', ()=> {
-    if(senha.value != confirmaSenha.value){
-        labelConfirmaSenha.setAttribute('style', 'color: red')
-        labelConfirmaSenha.innerHTML= 'Senha *as senhas nao correspondem'
-        confirmaSenha.setAttribute('style', 'border-color: red')
-        validaConfirmaSenha = false
+inputConfirmPassword.addEventListener('keyup', ()=> {
+    if(inputConfirmPassword.value != inputPassword.value){
+        labelConfirmPassword.setAttribute('style', 'color: red')
+        labelConfirmPassword.innerHTML= 'Senha *as senhas nao correspondem'
+        inputConfirmPassword.setAttribute('style', 'border-color: red')
+        validConfirmPassword = false
     }else {
-        labelConfirmaSenha.setAttribute('style', 'color: green')
-        labelConfirmaSenha.innerHTML= 'Senha *conforme'
-        confirmaSenha.setAttribute('style', 'border-color: green')
-        validaConfirmaSenha = true
+        labelConfirmPassword.setAttribute('style', 'color: green')
+        labelConfirmPassword.innerHTML= 'Senha *conforme'
+        inputConfirmPassword.setAttribute('style', 'border-color: green')
+        validConfirmPassword = true
     }
 })
 
 /* FUNÇÃO PARA CADASTRAR NO LOCAL STORAGE */
 
-registra.addEventListener('click', (evento)=>{
+registerButton.addEventListener('click', ()=>{
     
-    evento.preventDefault()
+    /* SE TUDO FOR = TRUE */
 
-    if(validaNome && validaUsuario && validaEmail && validaSenha && validaConfirmaSenha){
-        registraSuccess.innerHTML = 'Registrado com sucesso'
-        registraSuccess.setAttribute('style', 'display: block')
-        registraErro.innerHTML = ''
-        registraErro.setAttribute('style', 'display: none')
+    if(validName && validUser && validEmail && validPassword && validConfirmPassword){
+        registerSuccess.innerHTML = 'Registrado com sucesso'
+        registerSuccess.setAttribute('style', 'display: block')
+        registerErro.innerHTML = ''
+        registerErro.setAttribute('style', 'display: none')
 
-        let cadastra = JSON.parse(localStorage.getItem('cadastra') || '[]')
+        let register = JSON.parse(localStorage.getItem('cadastro') || '[]')
 
-        cadastra.push({
-            nomeCad: nome.value,
-            userCad: usuario.value,
-            emailCad: email.value,
-            senhaCad: senha.value
-        })
+            register.push({
+                
+                /* PARÂMETRO: OBJETO */
+                nameCad: inputName.value,
+                userCad: inputUser.value,
+                emailCad: inputEmail.value,
+                passwordCad: inputPassword.value
+            })
 
-        localStorage.setItem('cadastra', JSON.stringify(cadastra))
+            localStorage.setItem('cadastro', JSON.stringify(register))
 
-        setTimeout(()=>{
-            window.location.href= "http://localhost:5000/index.html"
-        },3000)
+            setTimeout(()=>{
+                window.location.href= 'http://localhost:5000/login.html?'
+            }, 3000)
 
-        }else{
+            }else{
+            registerErro.innerHTML = 'Nao foi possivel registrar'
+            registerErro.setAttribute('style', 'display: block')
+            registerSuccess.innerHTML = ''
+            registerSuccess.setAttribute('style', 'display: none')
+            }
+})
 
-        registraErro.innerHTML = 'Nao foi possivel registrar'
-        registraErro.setAttribute('style', 'display: block')
-        registraSuccess.innerHTML = ''
-        registraSuccess.setAttribute('style', 'display: none')
+/* FUNÇÃO PARA VISUALIZAR A SENHA */
 
+viewPasswordRegister.addEventListener('click', ()=> {
+    let inputPassword = document.querySelector('#inputCreatePassword')
+
+    if(inputPassword.getAttribute('type')=='password'){
+        inputPassword.setAttribute('type','text')
+    }else{
+        inputPassword.setAttribute('type', 'password')
     }
 })
 
+viewPasswordConfirm.addEventListener('click', ()=> {
+    let inputPassword = document.querySelector('#inputConfirmPassword')
+
+    if(inputPassword.getAttribute('type')=='password'){
+        inputPassword.setAttribute('type','text')
+    }else{
+        inputPassword.setAttribute('type', 'password')
+    }
+})

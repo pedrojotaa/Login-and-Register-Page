@@ -105,7 +105,6 @@ body{
 
 #container .box h2{
     font-size: 1.3rem;
-    font-weight: bold;
     text-align: center;
     color: #ffffff;
 }
@@ -132,15 +131,19 @@ label{
 .label-float label{
     position: absolute;
     top: 0;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     transition: all .3s ease-out;
     pointer-events: none;
+    width: 250px;
+}
+
+.label-float input{
+    width: 250px;
 }
 
 .label-float input:focus + label,
 .label-float input:valid + label{
     top: -20px;
-    font-size: 1rem;
 }
 
 #container .box #registerButton,
@@ -200,7 +203,7 @@ label{
 
 /* ESTILIZANDO MSG DE ERRO */
 
-#msgErro{
+#loginErro{
     background: lightcoral;
     color: red;
     border-radius: 5px;
@@ -213,22 +216,24 @@ label{
     background: lightcoral;
     color: red;
     border-radius: 5px;
-    width: 80%;
+    width: 90%;
     max-width: 300px;
     margin: 0 auto;
     padding: 10px;
     display: none;
+    text-align: center;
 }
 
 #registerSuccess{
     background: lightgreen;
     color: green;
     border-radius: 5px;
-    width: 80%;
+    width: 90%;
     max-width: 300px;
     margin: 0 auto;
     padding: 10px;
     display: none;
+    text-align: center;
 }
 
 /* ESTILIZANDO O SCROLL */
@@ -249,8 +254,11 @@ label{
 
 /* ESTILIZANDO O VISUALIZADOR DE SENHA */
 
-.show-password{
+.view-register,
+.view-confirm,
+.view-password{
     position: absolute;
     top: 0;
     right: 13px;
+    cursor: pointer;
 }

@@ -1,4 +1,4 @@
-//pagina de inicio
+//BOTÃO PAGINA INICIAL
 
 let buttonInicio = document.querySelector('#innerButton')
 
