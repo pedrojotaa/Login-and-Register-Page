@@ -96,7 +96,7 @@ body{
 }
 
 #container .box{
-    margin-top: 4rem;
+    margin-top: 6rem;
     background: #ffffff70;
     box-shadow: 5px 5px 5px #00000080;
     border-radius: 5px;
@@ -186,21 +186,6 @@ label{
     color: white;
 }
 
-/* ESTILIZANDO O FOOTER */
-
-#rodape{
-    max-width: 840px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 11% auto 0 auto
-}
-
-#rodape h3{
-    font-size: .8rem;
-    color: #ffffff;
-}
-
 /* ESTILIZANDO MSG DE ERRO */
 
 #loginErro{
@@ -274,3 +259,30 @@ label{
 /* #inputCreateEmail.error{
     background: red;
 } */
+
+
+[data-anime]{
+    opacity: 0;
+    transition: 1s;
+}
+
+[data-anime='down']{
+    transform: translate3d(0, -100%, 0);
+}
+
+[data-anime='up']{
+    transform: translate3d(0, 100%, 0);
+}
+
+[data-anime='rigth']{
+    transform: translate3d(35px, 0, 0);
+}
+
+[data-anime='left']{
+    transform: translate3d(-100%, 0, 0);
+}
+
+[data-anime].animation{
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}

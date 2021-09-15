@@ -34,30 +34,6 @@ let registerButton = document.querySelector('#registerButton')
 let registerErro = document.querySelector('#registerError')
 let registerSuccess = document.querySelector('#registerSuccess')
 
-const validaEmail = (event) =>{
-    const input = event.currentTarget
-    const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    const emailTest = regex.test(input.value)
-
-    if(!emailTest){
-        registerButton.setAttribute('disabled', 'disabled')
-//      inputEmail.classList.add('error')
-        labelEmail.setAttribute('style', 'color: red')
-        labelEmail.innerHTML= 'Email *invalido'
-        inputEmail.setAttribute('style', 'border-color: red')
-        validEmail = false
-    }else{
-        registerButton.removeAttribute('disabled')
-//      inputEmail.classList.remove('error')
-        labelEmail.setAttribute('style', 'color: green')
-        labelEmail.innerHTML= 'Email *valido'
-        inputEmail.setAttribute('style', 'border-color: green')
-        validEmail = true
-    }
-}
-
-inputEmail.addEventListener('input', validaEmail)
-
 ///////////////////////////////////////////////////////////////////////////////////////
 
 /* FUNÇÃO PARA VALIDAR OS CAMPOS */
@@ -104,6 +80,29 @@ inputUser.addEventListener('keyup', ()=> {
 //    }
 //})
 
+let validaEmail = (event) =>{
+    let input = event.currentTarget
+    let regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    let emailTest = regex.test(input.value)
+
+    if(!emailTest){
+        registerButton.setAttribute('disabled', 'disabled')
+//      inputEmail.classList.add('error')
+        labelEmail.setAttribute('style', 'color: red')
+        labelEmail.innerHTML= 'Email *invalido'
+        inputEmail.setAttribute('style', 'border-color: red')
+        validEmail = false
+    }else{
+        registerButton.removeAttribute('disabled')
+//      inputEmail.classList.remove('error')
+        labelEmail.setAttribute('style', 'color: green')
+        labelEmail.innerHTML= 'Email *valido'
+        inputEmail.setAttribute('style', 'border-color: green')
+        validEmail = true
+    }
+}
+
+inputEmail.addEventListener('input', validaEmail)
 
 inputPassword.addEventListener('keyup', ()=> {
     if(inputPassword.value.length <=5){
@@ -135,11 +134,13 @@ inputConfirmPassword.addEventListener('keyup', ()=> {
 
 /* FUNÇÃO PARA CADASTRAR NO LOCAL STORAGE */
 
-registerButton.addEventListener('click', ()=>{
+registerButton.addEventListener('click', (event)=>{
+
+    event.preventDefault()
     
     /* SE TUDO FOR = TRUE */
 
-    if(validName && validUser && validEmail && validPassword && validConfirmPassword){
+    if(validName && validUser && validName && validPassword && validConfirmPassword){
         registerSuccess.innerHTML = 'Registrado com sucesso'
         registerSuccess.setAttribute('style', 'display: block')
         registerErro.innerHTML = ''
@@ -152,7 +153,7 @@ registerButton.addEventListener('click', ()=>{
                 /* PARÂMETRO: OBJETO */
                 nameCad: inputName.value,
                 userCad: inputUser.value,
-                emailCad: inputEmail.value,
+                emailCad: inputName.value,
                 passwordCad: inputPassword.value
             })
 
