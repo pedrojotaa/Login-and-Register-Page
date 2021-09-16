@@ -11,12 +11,12 @@ buttonInicio.addEventListener('click', ()=>{
 const item = document.querySelectorAll('[data-anime]')
 
 const animaScroll = () => {
-    //tamanho do topo da tela no momento em relação a tela total no eixo Y
-    const windowTop = window.pageYOffset + window.innerHeight * 0.85
+    //o topo da pagina é 0 e ao scrollar vai aumentando
+    const windowTop = window.pageYOffset
 
     item.forEach(element =>{
-        //se o topo da pagina > altura que o elemento esta do topo
-        if(windowTop > element.offsetTop){
+        //se o topo da pagina for 0
+        if(windowTop == 0){
             element.classList.add('animation')
         }else{
             element.classList.remove('animation')
