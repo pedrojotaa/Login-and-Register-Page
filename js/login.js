@@ -1,5 +1,5 @@
-let viewPassword = document.querySelector('.view-password')
-let loginButton = document.querySelector('#loginButton')
+let viewPassword = document.querySelector('#view-password')
+let loginButton = document.querySelector('#login-bt')
 
 // LÓGICA DO BOTÃO DE LOGIN
 

@@ -1,112 +1,120 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');*/
 
 *{
     margin: 0;
     padding: 0;
-    font-family: Ubuntu, Arial;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
+/* INDEX */
+
+header{
     background-image: url("./background.png");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-attachment: fixed; 
     background-position: center;
-    scroll-behavior: smooth;
-    height: 100vh;
+    padding-bottom: 50px;
 }
 
-/* ESTILIZANDO O CABEÇALHO DO INICIO */
-
-.background-transparent{
-    background: #ffffff50;
+.bgTransparent{
+    background-color: #ffffff50;
 }
 
-#cabecalho{
+#index-nav{
+    max-width: 840px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
-    max-width: 840px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 1rem;
+    align-items: center;
 }
 
-#cabecalho #logo{
-    font-size: 2rem;
-    color: #ffffff;
-    padding: 0.3rem 1rem;
-}
-
-#cabecalho #innerButton{
+#login-page, 
+#register-page{
     background: #ffffff;
     color: purple;
-    border: 0;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin: 1rem;
     padding: 0.3rem 1.2rem;
     transition: 1s;
     font-size: .8rem;
 }
 
-#cabecalho #innerButton:hover{
+#login-page:hover,
+#register-page:hover{
     background: purple;
     color: #ffffff;
 }
 
-/* ESTILIZANDO O CABEÇALHO DOS DEMAIS */
-
 #index-content{
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     max-width: 840px;
-    width: 100%;
-    margin: 0 auto;
-    padding-top: 10rem;
+    margin: auto;
 }
 
-#index-content p{
+#index-content ul{
+    margin-top: 5em ;
     font-size: 50px;
     color: #ffffff;
-    margin: 0 2rem;
+    list-style: none;
 }
 
-#cabecalho a{
+#about-container{
+    background-color: lightblue;
+}
+
+#about{
+    max-width: 840px;
+    margin: auto;
+}
+
+/* LOGIN */
+
+#login-nav{
+    max-width: 840px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#login-nav li{
+    display: inline-block;
+    list-style: none;
+    margin-right: 5px;
+}
+
+#login-nav a{
     text-decoration: none;
     color: white;
-    margin: 2rem 0;
-    font-size: 1rem;
-    font-weight: bold;
-    transition: 1s;
 }
 
-#cabecalho a:hover{
+#ilogin-nav a:hover{
     color: purple;
 }
 
-#cabecalho a:focus{
+#login-nav a:focus{
     color: purple;
 }
 
-/* ESTILIZANDO O MAIN */
-
-#container{
-    display: flex;
-    justify-content: center;
-}
-
-#container .box{
-    margin-top: 6rem;
+#login-container{
+    max-width: 230px;
     background: #ffffff70;
     box-shadow: 5px 5px 5px #00000080;
     border-radius: 5px;
-    padding: 1rem 2rem;
-}
+    padding: 10px;
+    margin: auto;
+    margin-top: 50px;
+   }
 
-#container .box h2{
-    font-size: 1.3rem;
+#login-container h2{
+    font-size: 20px;
     text-align: center;
-    color: #ffffff;
+    color: purple;
+    margin-bottom: 30px;
 }
 
 input{
@@ -115,6 +123,8 @@ input{
     border-bottom: 2px solid #000000;
     display: block;
     outline: none;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 label{
@@ -123,9 +133,24 @@ label{
     margin-bottom: 0.4rem;
 }
 
+/*#inputPassword{
+    background-image: url('./eye.png');
+    background-size: 15px;
+    background-position: calc(100% - 10px) center;
+    background-repeat: no-repeat;
+}*/
+
 .label-float{
     position: relative;
-    margin: 1.5rem 0;
+    margin-bottom: 25px;
+}
+
+#view-password{
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    width: 15px;
+    cursor: pointer;
 }
 
 .label-float label{
@@ -134,11 +159,6 @@ label{
     font-size: 0.9rem;
     transition: all .3s ease-out;
     pointer-events: none;
-    width: 250px;
-}
-
-.label-float input{
-    width: 250px;
 }
 
 .label-float input:focus + label,
@@ -146,47 +166,56 @@ label{
     top: -20px;
 }
 
-#container .box #registerButton,
-#container .box #loginButton{
+#login-bt{
+    border: none;
     border-radius: 5px;
-    border: 0;
     background: purple;
     font-size: 1.1rem;
     font-weight: bold;
-    margin: 1rem 0;
     padding: 0.2rem;
     width: 100%;
     color: white;
     transition: 1s;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
-#container .box #registerButton:hover,
-#container .box #loginButton:hover{
+#login-bt:hover{
     background: white;
     color: purple;
 }
 
-#container .box .linha{
-    height: 2px;
-    color: #000000;
+#or{
+    font-size: 13px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-#container .box .register-link,
-#container .box .register-link a{
+#register-link,
+#register-link a{
     text-align: center;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 16px;
     font-weight: bold;
-    color: purple;
+    color: white;
     transition: 1s;
 }
 
-#container .box .register-link a:hover{
+#register-link a:hover{
     text-decoration: underline;
     color: white;
 }
 
-/* ESTILIZANDO MSG DE ERRO */
+/* FOOTER */
+
+footer{
+    background: #2A3338;
+    height: 100%;
+}
+
+
+/* MSG DE ERRO */
 
 #loginErro{
     background: lightcoral;

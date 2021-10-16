@@ -1,12 +1,17 @@
 //BOTÃO PAGINA INICIAL
 
-let buttonInicio = document.querySelector('#innerButton')
+let innerButton = document.querySelector('#login-page')
+let registerButton = document.querySelector('#register-page')
 
-buttonInicio.addEventListener('click', ()=>{
-    window.location.href = 'http://localhost:5000/login.html?'
+innerButton.addEventListener('click', ()=>{
+    window.location.href = 'http://127.0.0.1:5500/login.html'
 })
 
-// ANIMAÇÃO
+registerButton.addEventListener('click', ()=>{
+    window.location.href = 'http://127.0.0.1:5500/register.html'
+})
+
+//ANIMAÇÃO
 
 const item = document.querySelectorAll('[data-anime]')
 
@@ -23,10 +28,5 @@ const animaScroll = () => {
         }
     })
 }
-//sempre fica ligado
+//SEMPRE LIGADO
 animaScroll()
-
-//funcção de callback
-window.addEventListener('scroll', () => {
-    animaScroll()
-})
