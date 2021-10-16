@@ -32,18 +32,19 @@ header{
 #login-page, 
 #register-page{
     background: #ffffff;
-    color: purple;
+    color: #0078D4;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     padding: 0.3rem 1.2rem;
     transition: 1s;
-    font-size: .8rem;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 #login-page:hover,
 #register-page:hover{
-    background: purple;
+    background: #0078D4;
     color: #ffffff;
 }
 
@@ -93,11 +94,11 @@ header{
 }
 
 #ilogin-nav a:hover{
-    color: purple;
+    color: #0078D4;
 }
 
 #login-nav a:focus{
-    color: purple;
+    color: #0078D4;
 }
 
 #login-container{
@@ -113,7 +114,7 @@ header{
 #login-container h2{
     font-size: 20px;
     text-align: center;
-    color: purple;
+    color: white;
     margin-bottom: 30px;
 }
 
@@ -145,18 +146,10 @@ label{
     margin-bottom: 25px;
 }
 
-#view-password{
-    position: absolute;
-    top: -5px;
-    right: 5px;
-    width: 15px;
-    cursor: pointer;
-}
-
 .label-float label{
     position: absolute;
     top: 0;
-    font-size: 0.9rem;
+    font-size: 13px;
     transition: all .3s ease-out;
     pointer-events: none;
 }
@@ -166,10 +159,11 @@ label{
     top: -20px;
 }
 
-#login-bt{
+#login-bt,
+#register-bt{
     border: none;
     border-radius: 5px;
-    background: purple;
+    background: #0078D4;
     font-size: 1.1rem;
     font-weight: bold;
     padding: 0.2rem;
@@ -180,9 +174,10 @@ label{
     cursor: pointer;
 }
 
-#login-bt:hover{
+#login-bt:hover,
+#register-bt:hover{
     background: white;
-    color: purple;
+    color: #0078D4;
 }
 
 #or{
@@ -268,14 +263,19 @@ footer{
 
 /* ESTILIZANDO O VISUALIZADOR DE SENHA */
 
-.view-register,
-.view-confirm,
-.view-password{
+#view-password,
+#view-create,
+#view-confirm {
     position: absolute;
-    top: 0;
-    right: 13px;
+    top: -5px;
+    right: 5px;
+    width: 15px;
     cursor: pointer;
 }
+
+.view-register,
+.view-confirm,
+.view-password
 
 /* ESTILIZANDO O REGEX */
 

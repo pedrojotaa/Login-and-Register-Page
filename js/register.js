@@ -1,7 +1,7 @@
 /* VISUALIZADOR DE SENHA */
 
-let viewPasswordRegister = document.querySelector('.view-register')
-let viewPasswordConfirm = document.querySelector('.view-confirm')
+let viewPasswordCreate = document.querySelector('#view-create')
+let viewPasswordConfirm = document.querySelector('#view-confirm')
 
 /* LABEL E INPUT */
 
@@ -27,7 +27,7 @@ let validConfirmPassword = false
 
 /* BOTÃO DE REGISTRO */
 
-let registerButton = document.querySelector('#registerButton')
+let registerButton = document.querySelector('#register-bt')
 
 /* ERRO DO REGISTRO */
 
@@ -105,7 +105,12 @@ let validaEmail = (event) =>{
 inputEmail.addEventListener('input', validaEmail)
 
 inputPassword.addEventListener('keyup', ()=> {
-    if(inputPassword.value.length <=5){
+    if(inputPassword.value.length == 0){
+        labelPassword.removeAttribute('style', 'color: white')
+        labelPassword.innerHTML= 'Senha'
+        inputPassword.setAttribute('style', 'border-color: black')
+        validPassword = false
+    }else if(inputPassword.value.length <= 5){
         labelPassword.setAttribute('style', 'color: red')
         labelPassword.innerHTML= 'Senha *insira no minimo 6 caracteres'
         inputPassword.setAttribute('style', 'border-color: red')
@@ -119,14 +124,19 @@ inputPassword.addEventListener('keyup', ()=> {
 })
 
 inputConfirmPassword.addEventListener('keyup', ()=> {
-    if(inputConfirmPassword.value != inputPassword.value){
+    if(inputConfirmPassword.value.length == 0){
+        labelConfirmPassword.removeAttribute('style', 'color: white')
+        labelConfirmPassword.innerHTML= 'Confirma Senha'
+        inputConfirmPassword.setAttribute('style', 'border-color: black')
+        validConfirmPassword = false
+    }else if((inputConfirmPassword.value != inputPassword.value) || inputConfirmPassword.value.length <= 5){
         labelConfirmPassword.setAttribute('style', 'color: red')
-        labelConfirmPassword.innerHTML= 'Senha *as senhas nao correspondem'
+        labelConfirmPassword.innerHTML= 'Senhas nao correspondem'
         inputConfirmPassword.setAttribute('style', 'border-color: red')
         validConfirmPassword = false
     }else {
         labelConfirmPassword.setAttribute('style', 'color: green')
-        labelConfirmPassword.innerHTML= 'Senha *conforme'
+        labelConfirmPassword.innerHTML= 'Senha conforme'
         inputConfirmPassword.setAttribute('style', 'border-color: green')
         validConfirmPassword = true
     }
@@ -173,7 +183,7 @@ registerButton.addEventListener('click', (event)=>{
 
 /* FUNÇÃO PARA VISUALIZAR A SENHA */
 
-viewPasswordRegister.addEventListener('click', ()=> {
+viewPasswordCreate.addEventListener('click', ()=> {
     let inputPassword = document.querySelector('#inputCreatePassword')
 
     if(inputPassword.getAttribute('type')=='password'){
