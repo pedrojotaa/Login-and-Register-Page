@@ -15,6 +15,8 @@ header{
     background-attachment: fixed; 
     background-position: center;
     padding-bottom: 50px;
+    transition: all ease-in-out 0.5s;
+    z-index: 9997;
 }
 
 .bgTransparent{
@@ -29,10 +31,9 @@ header{
     align-items: center;
 }
 
-#login-page, 
-#register-page{
+#login-page{
     background: #ffffff;
-    color: #0078D4;
+    color: gray;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -42,16 +43,7 @@ header{
     font-weight: bold;
 }
 
-#login-page:hover,
-#register-page:hover{
-    background: #0078D4;
-    color: #ffffff;
-}
-
 #index-content{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     max-width: 840px;
     margin: auto;
 }
@@ -63,13 +55,38 @@ header{
     list-style: none;
 }
 
+#register-page{
+    background: #0078D4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    transition: 1s;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 50%;
+}
+
 #about-container{
-    background-color: lightblue;
+    background-color: #cccccc;
+    padding: 50px;
 }
 
 #about{
     max-width: 840px;
     margin: auto;
+}
+
+#about h2{
+    color: black;
+    margin-bottom: 20px;
+}
+
+#about p{
+    display: inline-block;
+    width: 300px;
 }
 
 /* LOGIN */
@@ -86,14 +103,12 @@ header{
     display: inline-block;
     list-style: none;
     margin-right: 5px;
-}
-
-#login-nav a{
-    text-decoration: none;
     color: white;
+    cursor: pointer;
+    transition: 1s;
 }
 
-#ilogin-nav a:hover{
+#login-nav li:hover{
     color: #0078D4;
 }
 
@@ -279,7 +294,7 @@ footer{
 
 /* ESTILIZANDO O REGEX */
 
-#container .box #registerButton:disabled{
+#register-bt:disabled{
     cursor: not-allowed;
     background: #2A3338;
     color: #ffffff;

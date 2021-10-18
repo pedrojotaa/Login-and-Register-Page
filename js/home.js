@@ -1,4 +1,4 @@
-let outButton = document.querySelector('#outButton')
+let outButton = document.querySelector('#out-bt')
 
 outButton.addEventListener('click',(event)=>{
     event.preventDefault()

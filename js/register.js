@@ -1,3 +1,19 @@
+let home = document.querySelector('#home')
+let sobre = document.querySelector('#sobre')
+let contato = document.querySelector('#contato')
+
+home.addEventListener('click', ()=>{
+    window.location.href = 'http://127.0.0.1:5500/index.html'
+})
+
+sobre.addEventListener('click', ()=>{
+    window.location.href = 'http://127.0.0.1:5500/index.html'
+})
+
+contato.addEventListener('click', ()=>{
+    window.location.href = 'http://127.0.0.1:5500/index.html'
+})
+
 /* VISUALIZADOR DE SENHA */
 
 let viewPasswordCreate = document.querySelector('#view-create')
@@ -39,7 +55,12 @@ let registerSuccess = document.querySelector('#registerSuccess')
 /* FUNÇÃO PARA VALIDAR OS CAMPOS */
 
 inputName.addEventListener('keyup', ()=> {
-    if(inputName.value.length <=3){
+    if(inputName.value.length == 0){
+        labelName.removeAttribute('style', 'color: white')
+        labelName.innerHTML= 'Nome'
+        inputName.setAttribute('style', 'border-color: black')
+        validName = false
+    }else if(inputName.value.length <= 3){
         labelName.setAttribute('style', 'color: red')
         labelName.innerHTML= 'Nome *insira no minimo 4 caracteres'
         inputName.setAttribute('style', 'border-color: red')
@@ -53,14 +74,19 @@ inputName.addEventListener('keyup', ()=> {
 })
 
 inputUser.addEventListener('keyup', ()=> {
-    if(inputUser.value.length <=5){
+    if(inputUser.value.length == 0){
+        labelUser.removeAttribute('style', 'color: white')
+        labelUser.innerHTML= 'Usuário'
+        inputUser.setAttribute('style', 'border-color: black')
+        validUser = false
+    }else if(inputUser.value.length <=5){
         labelUser.setAttribute('style', 'color: red')
-        labelUser.innerHTML= 'Usuario *insira no minimo 6 caracteres'
+        labelUser.innerHTML= 'Usuário *insira no minimo 6 caracteres'
         inputUser.setAttribute('style', 'border-color: red')
         validUser = false
     }else {
         labelUser.setAttribute('style', 'color: green')
-        labelUser.innerHTML= 'Usuario'
+        labelUser.innerHTML= 'Usuário'
         inputUser.setAttribute('style', 'border-color: green')
         validUser = true
     }
@@ -129,7 +155,7 @@ inputConfirmPassword.addEventListener('keyup', ()=> {
         labelConfirmPassword.innerHTML= 'Confirma Senha'
         inputConfirmPassword.setAttribute('style', 'border-color: black')
         validConfirmPassword = false
-    }else if((inputConfirmPassword.value != inputPassword.value) || inputConfirmPassword.value.length <= 5){
+    }else if(inputConfirmPassword.value != inputPassword.value || inputConfirmPassword.value.length <= 5){
         labelConfirmPassword.setAttribute('style', 'color: red')
         labelConfirmPassword.innerHTML= 'Senhas nao correspondem'
         inputConfirmPassword.setAttribute('style', 'border-color: red')

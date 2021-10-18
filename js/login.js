@@ -1,11 +1,25 @@
 let viewPassword = document.querySelector('#view-password')
 let loginButton = document.querySelector('#login-bt')
 
+let home = document.querySelector('#home')
+let sobre = document.querySelector('#sobre')
+let contato = document.querySelector('#contato')
+
+home.addEventListener('click', ()=>{
+    window.location.href = 'http://127.0.0.1:5500/index.html'
+})
+
+sobre.addEventListener('click', ()=>{
+    window.location.href = 'http://127.0.0.1:5500/index.html'
+})
+
+contato.addEventListener('click', ()=>{
+    window.location.href = 'http://127.0.0.1:5500/index.html'
+})
+
 // LÓGICA DO BOTÃO DE LOGIN
 
 loginButton.addEventListener('click', ()=>{
-
-    
 
     let labelUser = document.querySelector('#labelUser')
     let inputUser = document.querySelector('#inputUser')
