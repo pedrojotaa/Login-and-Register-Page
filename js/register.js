@@ -176,27 +176,27 @@ registerButton.addEventListener('click', (event)=>{
     
     /* SE TUDO FOR = TRUE */
 
-    if(validName && validUser && validName && validPassword && validConfirmPassword){
+    if(validName && validUser && validEmail && validPassword && validConfirmPassword){
         registerSuccess.innerHTML = 'Registrado com sucesso'
         registerSuccess.setAttribute('style', 'display: block')
         registerErro.innerHTML = ''
         registerErro.setAttribute('style', 'display: none')
 
         let register = JSON.parse(localStorage.getItem('cadastro') || '[]')
-
+            
             register.push({
                 
                 /* PARÂMETRO: OBJETO */
                 nameCad: inputName.value,
                 userCad: inputUser.value,
-                emailCad: inputName.value,
+                emailCad: inputEmail.value,
                 passwordCad: inputPassword.value
             })
 
             localStorage.setItem('cadastro', JSON.stringify(register))
 
             setTimeout(()=>{
-                window.location.href= 'http://localhost:5000/templates/login.html?'
+                window.location.href= 'http://127.0.0.1:5500/templates/login.html'
             }, 3000)
 
             }else{

@@ -19,7 +19,8 @@ contato.addEventListener('click', ()=>{
 
 // LÓGICA DO BOTÃO DE LOGIN
 
-loginButton.addEventListener('click', ()=>{
+loginButton.addEventListener('click', (event)=>{
+    event.preventDefault()
 
     let labelUser = document.querySelector('#labelUser')
     let inputUser = document.querySelector('#inputUser')
@@ -86,7 +87,7 @@ loginButton.addEventListener('click', ()=>{
             localStorage.setItem('token', token)
 
             setTimeout(()=>{
-                window.location.href = 'http://localhost:5000/logon.html?'
+                window.location.href = 'http://127.0.0.1:5500/templates/home.html?'
             }, 3000)
             
         }else{
