@@ -1,14 +1,16 @@
 //BOTÃO PAGINA INICIAL
 
-let innerButton = document.querySelector('#login-page')
-let registerButton = document.querySelector('#register-page')
+let menuButton = document.getElementById('menu-btn')
+let registerButton = document.getElementById('register-btn')
 
-innerButton.addEventListener('click', ()=>{
-    window.location.href = 'http://127.0.0.1:5500/login.html'
+menuButton.addEventListener('click', (event)=>{
+    event.preventDefault()
+    window.location.href = 'http://127.0.0.1:5500/templates/login.html'
 })
 
-registerButton.addEventListener('click', ()=>{
-    window.location.href = 'http://127.0.0.1:5500/register.html'
+registerButton.addEventListener('click', (event)=>{
+    event.preventDefault()
+    window.location.href = 'http://127.0.0.1:5500/templates/register.html'
 })
 
 //ANIMAÇÃO

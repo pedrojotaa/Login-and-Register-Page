@@ -6,15 +6,15 @@ let sobre = document.querySelector('#sobre')
 let contato = document.querySelector('#contato')
 
 home.addEventListener('click', ()=>{
-    window.location.href = 'http://127.0.0.1:5500/index.html'
+    window.location.href = 'http://127.0.0.1:5500/templates/index.html'
 })
 
 sobre.addEventListener('click', ()=>{
-    window.location.href = 'http://127.0.0.1:5500/index.html'
+    window.location.href = 'http://127.0.0.1:5500/templates/index.html'
 })
 
 contato.addEventListener('click', ()=>{
-    window.location.href = 'http://127.0.0.1:5500/index.html'
+    window.location.href = 'http://127.0.0.1:5500/templates/index.html'
 })
 
 // LÓGICA DO BOTÃO DE LOGIN

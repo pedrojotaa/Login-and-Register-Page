@@ -3,137 +3,107 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 /* INDEX */
 
 header{
-    background-image: url("./background.png");
-    background-repeat: no-repeat; 
+    background-image: url("../css/bg.png");
+    background-repeat: no-repeat;
     background-size: cover; 
     background-attachment: fixed; 
-    background-position: center;
-    padding-bottom: 50px;
-    transition: all ease-in-out 0.5s;
-    z-index: 9997;
+    background-position: center; 
+    width: 100%; 
+    height: 100vh;
 }
 
-.bgTransparent{
+#menu-nav{
     background-color: #ffffff50;
-}
-
-#index-nav{
-    max-width: 840px;
-    margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    padding: 10px;
 }
 
-#login-page{
-    background: #ffffff;
-    color: gray;
+#menu-nav #menu-btn{
+    background-color: #ffffff;
+    color: #0078D4;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    padding: 0.3rem 1.2rem;
-    transition: 1s;
+    padding: 5px;
     font-size: 14px;
     font-weight: bold;
-}
-
-#index-content{
-    max-width: 840px;
-    margin: auto;
-}
-
-#index-content ul{
-    margin-top: 5em ;
-    font-size: 50px;
-    color: #ffffff;
-    list-style: none;
-}
-
-#register-page{
-    background: #0078D4;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 10px;
-    transition: 1s;
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 20px;
     margin-left: 50%;
 }
 
-#about-container{
-    background-color: #cccccc;
-    padding: 50px;
+#index-content{
+   display: flex;
+   flex-direction: column;
 }
 
-#about{
-    max-width: 840px;
-    margin: auto;
+#index-content ul{
+    margin-top: 10%;
+    font-size: 50px;
+    color: #ffffff;
+    list-style: none;
+    margin-left: 20%;
 }
 
-#about h2{
-    color: black;
-    margin-bottom: 20px;
+#index-btn #register-btn{
+    background-color: #0078D4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10%;
+    margin-left: 60%;
 }
 
-#about p{
-    display: inline-block;
-    width: 300px;
+/* LOGIN/ REGISTER */
+
+#menu-nav ul{
+    margin-left: 50%;
 }
 
-/* LOGIN */
-
-#login-nav{
-    max-width: 840px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-#login-nav li{
+#menu-nav li{
     display: inline-block;
     list-style: none;
-    margin-right: 5px;
+    margin-left: 5px;
     color: white;
     cursor: pointer;
     transition: 1s;
+    font-weight: bold
 }
 
-#login-nav li:hover{
+#menu-nav li:hover,
+#menu-nav li:focus{
     color: #0078D4;
 }
 
-#login-nav a:focus{
-    color: #0078D4;
-}
-
-#login-container{
+.container{
     max-width: 230px;
-    background: #ffffff70;
-    box-shadow: 5px 5px 5px #00000080;
+    background-color: #ffffff70;
+    box-shadow: 8px 8px 15px rgb(0, 0, 0, .3);
     border-radius: 5px;
     padding: 10px;
     margin: auto;
-    margin-top: 50px;
-   }
+    margin-top: 10%;
+}
 
-#login-container h2{
+.container .title{
     font-size: 20px;
     text-align: center;
     color: white;
     margin-bottom: 30px;
 }
 
-input{
+.container .form input{
     background: transparent;
     border: 0;
     border-bottom: 2px solid #000000;
@@ -143,7 +113,7 @@ input{
     box-sizing: border-box;
 }
 
-label{
+.container .form label{
     color: #ffffff;
     font-size: 1rem;
     margin-bottom: 0.4rem;
@@ -156,12 +126,12 @@ label{
     background-repeat: no-repeat;
 }*/
 
-.label-float{
+.container .form .label-float{
     position: relative;
     margin-bottom: 25px;
 }
 
-.label-float label{
+.container .form .label-float label{
     position: absolute;
     top: 0;
     font-size: 13px;
@@ -169,8 +139,8 @@ label{
     pointer-events: none;
 }
 
-.label-float input:focus + label,
-.label-float input:valid + label{
+.container .form .label-float input:focus + label,
+.container .form .label-float input:valid + label{
     top: -20px;
 }
 
@@ -217,14 +187,6 @@ label{
     color: white;
 }
 
-/* FOOTER */
-
-footer{
-    background: #2A3338;
-    height: 100%;
-}
-
-
 /* MSG DE ERRO */
 
 #loginErro{
@@ -260,11 +222,11 @@ footer{
     text-align: center;
 }
 
-/* ESTILIZANDO O SCROLL */
+/* SCROLL */
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     width: 10px; 
-    
+    scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar-track {
@@ -274,9 +236,9 @@ footer{
 
 ::-webkit-scrollbar-thumb {
     background: #2A3338; 
-}
+} */
 
-/* ESTILIZANDO O VISUALIZADOR DE SENHA */
+/* VISUALIZADOR DE SENHA */
 
 #view-password,
 #view-create,
@@ -288,11 +250,7 @@ footer{
     cursor: pointer;
 }
 
-.view-register,
-.view-confirm,
-.view-password
-
-/* ESTILIZANDO O REGEX */
+/* REGEX */
 
 #register-bt:disabled{
     cursor: not-allowed;
