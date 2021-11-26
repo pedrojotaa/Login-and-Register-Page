@@ -115,14 +115,14 @@ let validaEmail = (event) =>{
         registerButton.setAttribute('disabled', 'disabled')
 //      inputEmail.classList.add('error')
         labelEmail.setAttribute('style', 'color: red')
-        labelEmail.innerHTML= 'Email *invalido'
+        labelEmail.innerHTML= 'E-mail* invalido ex: user@outlook.com'
         inputEmail.setAttribute('style', 'border-color: red')
         validEmail = false
     }else{
         registerButton.removeAttribute('disabled')
 //      inputEmail.classList.remove('error')
         labelEmail.setAttribute('style', 'color: green')
-        labelEmail.innerHTML= 'Email *valido'
+        labelEmail.innerHTML= 'E-mail *valido'
         inputEmail.setAttribute('style', 'border-color: green')
         validEmail = true
     }

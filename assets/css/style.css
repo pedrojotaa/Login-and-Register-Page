@@ -100,7 +100,7 @@ header{
     font-size: 20px;
     text-align: center;
     color: white;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .container .form input{
@@ -111,12 +111,6 @@ header{
     outline: none;
     width: 100%;
     box-sizing: border-box;
-}
-
-.container .form label{
-    color: #ffffff;
-    font-size: 1rem;
-    margin-bottom: 0.4rem;
 }
 
 /*#inputPassword{
@@ -132,9 +126,10 @@ header{
 }
 
 .container .form .label-float label{
+    color: white;
     position: absolute;
     top: 0;
-    font-size: 13px;
+    font-size: 12px;
     transition: all .3s ease-out;
     pointer-events: none;
 }
@@ -193,33 +188,33 @@ header{
     background: lightcoral;
     color: red;
     border-radius: 5px;
-    padding: 6px;
+    width: 100%;
+    padding: 5px;
     display: none;
     text-align: center;
+    margin-bottom: 25px;
 }
 
 #registerError{
     background: lightcoral;
     color: red;
     border-radius: 5px;
-    width: 90%;
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 10px;
+    width: 100%;
+    padding: 5px;
     display: none;
     text-align: center;
+    margin-bottom: 25px;
 }
 
 #registerSuccess{
     background: lightgreen;
     color: green;
     border-radius: 5px;
-    width: 90%;
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 10px;
+    width: 100%;
+    padding: 5px;
     display: none;
     text-align: center;
+    margin-bottom: 25px;
 }
 
 /* SCROLL */
