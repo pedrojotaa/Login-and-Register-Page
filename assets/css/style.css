@@ -29,7 +29,6 @@ header{
 
 #menu-nav #menu-btn{
     background-color: #ffffff;
-    color: #0078D4;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -37,6 +36,11 @@ header{
     font-size: 14px;
     font-weight: bold;
     margin-left: 50%;
+}
+
+#menu-nav #menu-btn a{
+    text-decoration: none;
+    color: #0078D4;
 }
 
 #index-content{
@@ -54,7 +58,6 @@ header{
 
 #index-btn #register-btn{
     background-color: #0078D4;
-    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -63,6 +66,11 @@ header{
     font-weight: bold;
     margin-top: 10%;
     margin-left: 60%;
+}
+
+#index-btn #register-btn a{
+    text-decoration: none;
+    color: white;
 }
 
 /* LOGIN/ REGISTER */
