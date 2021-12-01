@@ -1,22 +1,6 @@
 let viewPassword = document.querySelector('#view-password')
 let loginButton = document.querySelector('#login-bt')
 
-let home = document.querySelector('#home')
-let sobre = document.querySelector('#sobre')
-let contato = document.querySelector('#contato')
-
-home.addEventListener('click', ()=>{
-    window.location.href = 'http://127.0.0.1:5500/index.html'
-})
-
-sobre.addEventListener('click', ()=>{
-    window.location.href = 'http://127.0.0.1:5500/index.html'
-})
-
-contato.addEventListener('click', ()=>{
-    window.location.href = 'http://127.0.0.1:5500/index.html'
-})
-
 // LÓGICA DO BOTÃO DE LOGIN
 
 loginButton.addEventListener('click', (event)=>{
@@ -33,19 +17,10 @@ loginButton.addEventListener('click', (event)=>{
     // CRIA UM ARRAY VAZIO PARA O LOCAOL STORAGE
 
     let listUser = []
-
-    // CRIA UM OBJETO QUE IRA RECEBER PARAMETROS
-
-    let valid = {
-        name: '',
-        user: '',
-        email: '',
-        password: ''
-    }
     
-    // VAI NO LOCAL STORAGE E PEGA O OBJETO cadastra CRIADO NO REGISTRO
+    // VAI NO LOCAL STORAGE E PEGA O OBJETO cadastro CRIADO NO REGISTRO
 
-    listUser = JSON.parse(localStorage.getItem('cadastro'))
+    listUser = JSON.parse(localStorage.getItem('cadastro') || '[]')
 
     // FOREACH VARRE TODOS OS ITENS
 
@@ -54,55 +29,30 @@ loginButton.addEventListener('click', (event)=>{
         //  SE O VALOR DO USUARIO = VALOR USSERCAD DO cadastra
 
         if(inputUser.value == item.userCad && inputPassword.value == item.passwordCad){
-            valid = {
-                name: item.nameCad,
-                user: item.userCad,
-                email: item.emailCad,
-                password: item.passwordCad
-            }
-        }else{
-            if(item == null){
-                loginErro.setAttribute('style', 'display: block')
-                loginErro.innerHTML = 'Sem usuários cadastrados'
-    
-                inputUser.focus()
-            }
-        }
-    })
-        if(inputUser.value == valid.user && inputPassword.value == valid.password){
             labelUser.setAttribute('style', 'color: green')
             inputUser.setAttribute('style', 'border-color: green')
-
+    
             labelPassword.setAttribute('style', 'color: green')
             inputPassword.setAttribute('style', 'border-color: green')
-
+    
             loginErro.setAttribute('style', 'display: none')
-
-            // CRIANDO UM TOKEN
-
+    
             let token = Math.random().toString(16).substr(2) + Math.random().toString(16).substr(2)
-
-            // NAO UTILIZA O JSON.STRINGFY POIS O TOKEN JA É UMA STRING
-
+    
             localStorage.setItem('token', token)
-
+    
             setTimeout(()=>{
-                window.location.href = 'http://127.0.0.1:5500/templates/home.html?'
+                window.location.href = 'dashboard.html?'
             }, 3000)
-            
         }else{
-            labelUser.setAttribute('style', 'color: red')
-            inputUser.setAttribute('style', 'border-color: red')
-
-            labelPassword.setAttribute('style', 'color: red') 
-            inputPassword.setAttribute('style', 'border-color: red')
-
+            loginErro.removeAttribute('style', 'display: none')
             loginErro.setAttribute('style', 'display: block')
             loginErro.innerHTML = 'Usuario ou Senha Incorretos'
-
+    
             inputUser.focus()
         }
     })
+})
 
 viewPassword.addEventListener('click', ()=> {
     let inputPassword = document.querySelector('#inputPassword')

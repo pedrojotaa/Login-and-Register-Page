@@ -1,19 +1,3 @@
-let home = document.querySelector('#home')
-let sobre = document.querySelector('#sobre')
-let contato = document.querySelector('#contato')
-
-home.addEventListener('click', ()=>{
-    window.location.href = 'http://127.0.0.1:5500/index.html'
-})
-
-sobre.addEventListener('click', ()=>{
-    window.location.href = 'http://127.0.0.1:5500/index.html'
-})
-
-contato.addEventListener('click', ()=>{
-    window.location.href = 'http://127.0.0.1:5500/index.html'
-})
-
 /* VISUALIZADOR DE SENHA */
 
 let viewPasswordCreate = document.querySelector('#view-create')
@@ -52,7 +36,7 @@ let registerSuccess = document.querySelector('#registerSuccess')
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
-/* FUNÇÃO PARA VALIDAR OS CAMPOS */
+/* VALIDAÇÃO DE CAMPOS */
 
 inputName.addEventListener('keyup', ()=> {
     if(inputName.value.length == 0){
@@ -92,43 +76,28 @@ inputUser.addEventListener('keyup', ()=> {
     }
 })
 
-//inputEmail.addEventListener('keyup', ()=> {
-//    if(inputEmail.value.length <=5){
-//        labelEmail.setAttribute('style', 'color: red')
-//        labelEmail.innerHTML= 'Email *insira no minimo 6 caracteres'
-//        inputEmail.setAttribute('style', 'border-color: red')
-//        validEmail = false
-//    }else {
-//        labelEmail.setAttribute('style', 'color: green')
-//        labelEmail.innerHTML= 'Email'
-//        inputEmail.setAttribute('style', 'border-color: green')
-//        validEmail = true
-//    }
-//})
-
-let validaEmail = (event) =>{
+inputEmail.addEventListener('input', (event)=> {
     let input = event.currentTarget
-    let regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    let regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
     let emailTest = regex.test(input.value)
 
-    if(!emailTest){
-        registerButton.setAttribute('disabled', 'disabled')
-//      inputEmail.classList.add('error')
-        labelEmail.setAttribute('style', 'color: red')
-        labelEmail.innerHTML= 'E-mail* invalido ex: user@outlook.com'
-        inputEmail.setAttribute('style', 'border-color: red')
-        validEmail = false
-    }else{
-        registerButton.removeAttribute('disabled')
-//      inputEmail.classList.remove('error')
-        labelEmail.setAttribute('style', 'color: green')
-        labelEmail.innerHTML= 'E-mail *valido'
-        inputEmail.setAttribute('style', 'border-color: green')
-        validEmail = true
-    }
-}
-
-inputEmail.addEventListener('input', validaEmail)
+    if(inputEmail.value.length == 0){
+        labelEmail.removeAttribute('style', 'color: white')
+        labelEmail.innerHTML= 'Email'
+        inputEmail.setAttribute('style', 'border-color: black')
+        validUser = false
+    }else if(!emailTest){
+            labelEmail.setAttribute('style', 'color: red')
+            labelEmail.innerHTML= 'E-mail* invalido ex: user@outlook.com'
+            inputEmail.setAttribute('style', 'border-color: red')
+            validEmail = false
+        }else{
+            labelEmail.setAttribute('style', 'color: green')
+            labelEmail.innerHTML= 'E-mail *valido'
+            inputEmail.setAttribute('style', 'border-color: green')
+            validEmail = true
+        }
+})
 
 inputPassword.addEventListener('keyup', ()=> {
     if(inputPassword.value.length == 0){
@@ -171,10 +140,7 @@ inputConfirmPassword.addEventListener('keyup', ()=> {
 /* FUNÇÃO PARA CADASTRAR NO LOCAL STORAGE */
 
 registerButton.addEventListener('click', (event)=>{
-
     event.preventDefault()
-    
-    /* SE TUDO FOR = TRUE */
 
     if(validName && validUser && validEmail && validPassword && validConfirmPassword){
         registerSuccess.innerHTML = 'Registrado com sucesso'
@@ -185,8 +151,6 @@ registerButton.addEventListener('click', (event)=>{
         let register = JSON.parse(localStorage.getItem('cadastro') || '[]')
             
             register.push({
-                
-                /* PARÂMETRO: OBJETO */
                 nameCad: inputName.value,
                 userCad: inputUser.value,
                 emailCad: inputEmail.value,
@@ -196,15 +160,15 @@ registerButton.addEventListener('click', (event)=>{
             localStorage.setItem('cadastro', JSON.stringify(register))
 
             setTimeout(()=>{
-                window.location.href= 'http://127.0.0.1:5500/templates/login.html'
+                window.location.href= 'login.html'
             }, 3000)
 
-            }else{
-            registerErro.innerHTML = 'Nao foi possivel registrar'
-            registerErro.setAttribute('style', 'display: block')
-            registerSuccess.innerHTML = ''
-            registerSuccess.setAttribute('style', 'display: none')
-            }
+    }else{
+        registerErro.innerHTML = 'Nao foi possivel registrar'
+        registerErro.setAttribute('style', 'display: block')
+        registerSuccess.innerHTML = ''
+        registerSuccess.setAttribute('style', 'display: none')
+        }
 })
 
 /* FUNÇÃO PARA VISUALIZAR A SENHA */
