@@ -10,7 +10,7 @@
 /* INDEX */
 
 header{
-    background-image: url("../css/bg.png");
+    background-image: url("../css/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover; 
     background-attachment: fixed; 
@@ -32,15 +32,25 @@ header{
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    padding: 5px;
+    padding: 9px 27px 12px;
     font-size: 14px;
     font-weight: bold;
     margin-left: 50%;
+    transition: .1s;
+}
+
+#menu-nav #menu-btn:hover{
+    margin-bottom: 2px;
 }
 
 #menu-nav #menu-btn a{
     text-decoration: none;
     color: #0078D4;
+}
+
+#menu-nav a{
+    text-decoration: none;
+    color: #ffffff;
 }
 
 #index-content{
@@ -56,16 +66,26 @@ header{
     margin-left: 20%;
 }
 
+#index-btn{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 150px;
+    margin-right: 20%;
+}
+
 #index-btn #register-btn{
     background-color: #0078D4;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    padding: 10px;
-    font-size: 20px;
+    padding: 10px 40px;
+    font-size: 23px;
     font-weight: bold;
-    margin-top: 10%;
-    margin-left: 60%;
+    transition: .1s;
+}
+
+#index-btn #register-btn:hover{
+  margin-top: -2px;
 }
 
 #index-btn #register-btn a{
@@ -79,24 +99,23 @@ header{
     margin-left: 50%;
 }
 
-#menu-nav li{
+#menu-nav ul li{
     display: inline-block;
     list-style: none;
     margin-left: 5px;
-    color: white;
     cursor: pointer;
     transition: 1s;
-    font-weight: bold
 }
 
-#menu-nav li:hover,
-#menu-nav li:focus{
-    color: #0078D4;
+#menu-nav ul li a{
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .container{
     max-width: 230px;
-    background-color: #ffffff70;
+    background-color: #ffffff99;
     box-shadow: 8px 8px 15px rgb(0, 0, 0, .3);
     border-radius: 5px;
     padding: 10px;
@@ -105,9 +124,8 @@ header{
 }
 
 .container .title{
-    font-size: 20px;
+    font-size: 25px;
     text-align: center;
-    color: white;
     margin-bottom: 20px;
 }
 
@@ -134,7 +152,6 @@ header{
 }
 
 .container .form .label-float label{
-    color: white;
     position: absolute;
     top: 0;
     font-size: 12px;
@@ -170,7 +187,6 @@ header{
 
 #or{
     font-size: 13px;
-    color: white;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -181,18 +197,17 @@ header{
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
-    color: white;
-    transition: 1s;
+    color: #000000;
 }
 
 #register-link a:hover{
     text-decoration: underline;
-    color: white;
 }
 
 /* MSG DE ERRO */
 
 #loginErro{
+    font-size: 15px;
     background: lightcoral;
     color: red;
     border-radius: 5px;
@@ -204,6 +219,7 @@ header{
 }
 
 #registerError{
+    font-size: 15px;
     background: lightcoral;
     color: red;
     border-radius: 5px;
@@ -215,6 +231,7 @@ header{
 }
 
 #registerSuccess{
+    font-size: 15px;
     background: lightgreen;
     color: green;
     border-radius: 5px;
